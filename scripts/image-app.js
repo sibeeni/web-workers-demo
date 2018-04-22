@@ -42,9 +42,16 @@
 
     // Hint! This is where you should post messages to the web worker and
     // receive messages from the web worker.
+	var worker = new Worker('scripts/worker.js');
+
+	worker.addEventListener('message', function(e) {
+		console.log('Worker said: ', e.data);
+		imageData = e.data;
+	}, false);
+
 	worker.postMessage({'imageData': imageData, 'type': type});
   
-	
+
 	/*
     length = imageData.data.length / 4;
     for (i = j = 0, ref = length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
