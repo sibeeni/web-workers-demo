@@ -42,7 +42,10 @@
 
     // Hint! This is where you should post messages to the web worker and
     // receive messages from the web worker.
-
+	worker.postMessage({'imageData': imageData, 'type': type});
+  
+	
+	/*
     length = imageData.data.length / 4;
     for (i = j = 0, ref = length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
       r = imageData.data[i * 4 + 0];
@@ -54,7 +57,8 @@
       imageData.data[i * 4 + 1] = pixel[1];
       imageData.data[i * 4 + 2] = pixel[2];
       imageData.data[i * 4 + 3] = pixel[3];
-    }
+    }*/
+	
     toggleButtonsAbledness();
     return ctx.putImageData(imageData, 0, 0);
   };
