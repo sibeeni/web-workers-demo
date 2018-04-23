@@ -46,7 +46,10 @@
 
 	worker.addEventListener('message', function(e) {
 		console.log('Worker said: ', e.data);
+
 		imageData = e.data;
+		toggleButtonsAbledness();
+		ctx.putImageData(imageData, 0, 0);
 	}, false);
 
 	worker.postMessage({'imageData': imageData, 'type': type});
