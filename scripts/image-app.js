@@ -38,7 +38,7 @@
     var a, b, g, i, imageData, j, length, pixel, r, ref;
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-    toggleButtonsAbledness();
+    //toggleButtonsAbledness();
 
     // Hint! This is where you should post messages to the web worker and
     // receive messages from the web worker.
@@ -48,7 +48,7 @@
 		console.log('Worker said: ', e.data);
 
 		imageData = e.data;
-		toggleButtonsAbledness();
+		//toggleButtonsAbledness();
 		ctx.putImageData(imageData, 0, 0);
 	}, false);
 
@@ -69,8 +69,10 @@
       imageData.data[i * 4 + 3] = pixel[3];
     }*/
 	
-    toggleButtonsAbledness();
-    return ctx.putImageData(imageData, 0, 0);
+    //toggleButtonsAbledness();
+    //return ctx.putImageData(imageData, 0, 0);
+	
+	return null;
   };
 
   function revertImage() {
