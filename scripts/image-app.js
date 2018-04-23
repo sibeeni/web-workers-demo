@@ -38,6 +38,7 @@
     var a, b, g, i, imageData, j, length, pixel, r, ref;
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
+	/*
     toggleButtonsAbledness();
 
     // Hint! This is where you should post messages to the web worker and
@@ -59,8 +60,8 @@
 	
     toggleButtonsAbledness();
     return ctx.putImageData(imageData, 0, 0);
+	*/
 	
-	/*
 	var worker = new Worker('scripts/worker.js');
 
 	worker.addEventListener('message', function(e) {
@@ -73,7 +74,7 @@
 
 	worker.postMessage({'imageData': imageData, 'type': type});
   
-	return null;*/
+	return null;
   };
 
   function revertImage() {
